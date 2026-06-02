@@ -45,7 +45,7 @@ Before promoting the server to a Domain Controller, a static IP and loopback DNS
 | Subnet Mask | `255.255.255.0` |
 | DNS | `127.0.0.1` (loopback) |
 
-> 📸 Insert Image 1 — Static IP and loopback DNS configured on the DC network adapter
+![Static IP Configuration](AD%201.png)
 
 ---
 
@@ -57,7 +57,7 @@ After configuring the adapter settings, `ipconfig` was run to confirm the static
 ipconfig
 ```
 
-> 📸 Insert Image 2 — ipconfig output confirming static IP on the Domain Controller
+![ipconfig DC](AD%202.png)
 
 ---
 
@@ -72,7 +72,7 @@ AD DS was installed through Server Manager and the server was promoted to a Doma
 4. Selected **Add a new forest** → domain name: `lab.local`
 5. Set DSRM password → completed wizard → server rebooted as DC
 
-> 📸 Insert Image 3 — AD DS role installation and domain promotion wizard
+![AD DS Installation](AD%203.png)
 
 ---
 
@@ -88,7 +88,7 @@ A second VM was created in VirtualBox to serve as the client workstation that wo
 | Disk | 40GB |
 | Network | Internal Network → `adlab` |
 
-> 📸 Insert Image 4 — Windows 11 Client VM setup in VirtualBox
+![Client VM Setup](AD%204.png)
 
 ---
 
@@ -96,7 +96,7 @@ A second VM was created in VirtualBox to serve as the client workstation that wo
 
 After booting the client VM, `ipconfig` revealed no static IP had been assigned. Without a static IP and the correct DNS pointing to the DC, the client would not be able to locate or join the domain.
 
-> 📸 Insert Image 5 — ipconfig showing no static IP configured on client machine
+![No Static IP on Client](AD%205.png)
 
 ---
 
@@ -110,7 +110,7 @@ A static IP was manually configured on the client with the Domain Controller set
 | Subnet Mask | `255.255.255.0` |
 | Preferred DNS | `192.168.10.1` (Domain Controller) |
 
-> 📸 Insert Image 6 — Static IP configured on client VM with DC set as DNS server
+![Client Static IP Configured](AD6.png)
 
 ---
 
@@ -120,7 +120,7 @@ A static IP was manually configured on the client with the Domain Controller set
 ipconfig
 ```
 
-> 📸 Insert Image 7 — ipconfig output confirming static IP on client machine
+![ipconfig Client](AD7.png)
 
 ---
 
@@ -157,7 +157,7 @@ ipconfig
 5. Ran `gpupdate /force` on the server
 6. Successfully created users after policy refreshed
 
-> 📸 Insert Image 9 — Group Policy Management Editor showing password complexity disabled
+![Password Policy Fix](AD%209.png)
 
 ---
 
@@ -170,7 +170,7 @@ Three domain user accounts were created inside the `IT-LVL-1` OU with **"User mu
 - `jsmith`
 - `mlopez`
 
-> 📸 Insert Image 10 — Active Directory Users and Computers showing 3 users inside IT-LVL-1 OU
+![Users in OU](AD10.png)
 
 ---
 
@@ -185,7 +185,7 @@ A Group Policy Object was created and linked to the `IT-LVL-1` OU to block users
 4. Set **Prohibit access to Control Panel and PC Settings** → **Enabled**
 5. Ran `gpupdate /force` on the client to apply immediately
 
-> 📸 Insert Image 11 — Group Policy Management Editor showing Control Panel restriction enabled
+![GPO Control Panel Restriction](AD11.png)
 
 ---
 
@@ -197,7 +197,7 @@ Logged into the Windows 11 client using a domain user account from the `IT-LVL-1
 lab\ted
 ```
 
-> 📸 Insert Image 12 — Client machine showing GPO restriction message when attempting to open Control Panel
+![GPO Blocking Access](AD12.png)
 
 ---
 
@@ -234,4 +234,3 @@ lab\ted
 ## 📚 What I Learned
 
 Gained practical understanding of how enterprise identity and access management works — how users are organized through OUs, how Group Policy enforces security controls at scale, and how domain authentication flows between a client and a Domain Controller. Troubleshooting real issues like network adapter mismatches, DNS dependency for domain joining, and Group Policy propagation gave me hands-on experience that directly maps to Help Desk, IT Support, and junior cybersecurity roles.
-
