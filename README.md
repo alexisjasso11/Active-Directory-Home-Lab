@@ -133,7 +133,7 @@ ipconfig
 1. Powered off both VMs
 2. VirtualBox → Settings → Network → Adapter 1
 3. Set **Attached to: Internal Network** on both VMs
-4. Named both adapters `adlab`
+4. Named both adapters `labnnet`
 5. Rebooted both VMs — ping succeeded
 
 > 📸 No image captured for this step — issue was resolved during troubleshooting
