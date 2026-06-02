@@ -86,7 +86,7 @@ A second VM was created in VirtualBox to serve as the client workstation that wo
 | CPU | 2 cores |
 | RAM | 2048 MB |
 | Disk | 40GB |
-| Network | Internal Network → `adlab` |
+| Network | Internal Network → `labnet` |
 
 ![Client VM Setup](AD%204.png)
 
