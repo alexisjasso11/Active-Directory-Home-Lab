@@ -86,7 +86,6 @@ A second VM was created in VirtualBox to serve as the client workstation that wo
 | CPU | 2 cores |
 | RAM | 2048 MB |
 | Disk | 40GB |
-| Network | Internal Network → `labnet` |
 
 ![Client VM Setup](AD%204.png)
 
@@ -166,9 +165,9 @@ ipconfig
 Three domain user accounts were created inside the `IT-LVL-1` OU with **"User must change password at next logon"** enabled — mirroring real enterprise onboarding procedures.
 
 **Users Created:**
-- `ted`
-- `jsmith`
-- `mlopez`
+- `Alexis Jasso`
+- `John Doe`
+- `Ted Reed`
 
 ![Users in OU](AD10.png)
 
@@ -194,7 +193,7 @@ A Group Policy Object was created and linked to the `IT-LVL-1` OU to block users
 Logged into the Windows 11 client using a domain user account from the `IT-LVL-1` OU and attempted to open Control Panel — access was denied confirming the GPO was working end to end.
 
 ```
-lab\ted
+Alexis
 ```
 
 ![GPO Blocking Access](AD12.png)
