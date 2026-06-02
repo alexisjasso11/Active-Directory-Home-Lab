@@ -106,7 +106,7 @@ A static IP was manually configured on the client with the Domain Controller set
 
 | Setting | Value |
 |--------|-------|
-| IP Address | `192.168.10.2` |
+| IP Address | `192.168.10.100` |
 | Subnet Mask | `255.255.255.0` |
 | Preferred DNS | `192.168.10.1` (Domain Controller) |
 
