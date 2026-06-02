@@ -27,7 +27,7 @@ Built a fully functional Active Directory environment on a personal desktop usin
 
 - 🖥️ Deployed Windows Server 2025 as a Domain Controller with a new forest (`lab.local`)
 - 🌐 Configured static IPs and DNS on both VMs for domain communication
-- 👥 Created an Organizational Unit (`IT-LVL-1`) with multiple domain user accounts
+- 👥 Created an Organizational Unit (`IT-LVL-01`) with multiple domain user accounts
 - 🔒 Implemented and verified a Group Policy Object restricting Control Panel access
 - 💻 Joined a Windows 11 client machine to the domain and authenticated as a domain user
 
@@ -141,7 +141,7 @@ ipconfig
 
 ### Step 9 — 🛠️ Troubleshooting: Password Complexity Error When Adding Users
 
-**❌ Problem:** When adding users to the `IT-LVL-1` OU the following error appeared:
+**❌ Problem:** When adding users to the `IT-LVL-01` OU the following error appeared:
 
 > *"The password does not meet the password policy requirements."*
 
@@ -159,9 +159,9 @@ ipconfig
 
 ---
 
-### Step 10 — Create Users in the IT-LVL-1 Organizational Unit
+### Step 10 — Create Users in the IT-LVL-01 Organizational Unit
 
-Three domain user accounts were created inside the `IT-LVL-1` OU with **"User must change password at next logon"** enabled — mirroring real enterprise onboarding procedures.
+Three domain user accounts were created inside the `IT-LVL-01` OU with **"User must change password at next logon"** enabled — mirroring real enterprise onboarding procedures.
 
 **Users Created:**
 - `Alexis Jasso`
@@ -174,10 +174,10 @@ Three domain user accounts were created inside the `IT-LVL-1` OU with **"User mu
 
 ### Step 11 — Implement GPO to Restrict Control Panel Access
 
-A Group Policy Object was created and linked to the `IT-LVL-1` OU to block users from accessing the Control Panel — simulating a real-world scenario where standard users are restricted from modifying system settings.
+A Group Policy Object was created and linked to the `IT-LVL-01` OU to block users from accessing the Control Panel — simulating a real-world scenario where standard users are restricted from modifying system settings.
 
 **Steps taken:**
-1. Group Policy Management → right-click `IT-LVL-1` → **Create a GPO and Link it here**
+1. Group Policy Management → right-click `IT-LVL-01` → **Create a GPO and Link it here**
 2. Named it `Restrict Control Panel`
 3. Navigated to: `User Configuration → Policies → Administrative Templates → Control Panel`
 4. Set **Prohibit access to Control Panel and PC Settings** → **Enabled**
@@ -189,7 +189,7 @@ A Group Policy Object was created and linked to the `IT-LVL-1` OU to block users
 
 ### Step 12 — Verify GPO — Control Panel Blocked on Client Machine
 
-Logged into the Windows 11 client using a domain user account from the `IT-LVL-1` OU and attempted to open Control Panel — access was denied confirming the GPO was working end to end.
+Logged into the Windows 11 client using a domain user account from the `IT-LVL-01` OU and attempted to open Control Panel — access was denied confirming the GPO was working end to end.
 
 ```
 Alexis
