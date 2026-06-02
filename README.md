@@ -136,7 +136,6 @@ ipconfig
 4. Named both adapters `labnnet`
 5. Rebooted both VMs — ping succeeded
 
-> 📸 No image captured for this step — issue was resolved during troubleshooting
 
 ---
 
